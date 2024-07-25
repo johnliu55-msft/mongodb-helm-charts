@@ -2,20 +2,21 @@
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
 # - name: "image-pull-secret"
+
 ## Operator
 operator:
   # Name that will be assigned to most of internal Kubernetes objects like
   # Deployment, ServiceAccount, Role etc.
-  name: mongodb-kubernetes-operator
+  name: contosodb-kubernetes-operator
 
   # Name of the operator image
-  operatorImageName: mongodb-kubernetes-operator
+  operatorImageName: contosodb-kubernetes-operator
 
   # Name of the deployment of the operator pod
-  deploymentName: mongodb-kubernetes-operator
+  deploymentName: contosodb-kubernetes-operator
 
   # Version of mongodb-kubernetes-operator
-  version: 0.9.0
+  version: 1.8.3
 
   # Uncomment this line to watch all namespaces
   # watchNamespace: "*"
@@ -23,11 +24,11 @@ operator:
   # Resources allocated to Operator Pod
   resources:
     limits:
-      cpu: 1100m
-      memory: 1Gi
+      cpu: 1500m
+      memory: 1.5Gi
     requests:
-      cpu: 500m
-      memory: 200Mi
+      cpu: 1000m
+      memory: 500Mi
 
   # PriorityClass configuration for operator
   # ref: https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/#priorityclass
@@ -38,9 +39,6 @@ operator:
 
   # Additional environment variables
   extraEnvs: []
-  # environment:
-  # - name: CLUSTER_DOMAIN
-  #   value: my-cluster.domain
 
   podSecurityContext:
     runAsNonRoot: true
