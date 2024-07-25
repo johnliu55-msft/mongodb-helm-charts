@@ -15,7 +15,7 @@ operator:
   # Name of the deployment of the operator pod
   deploymentName: contosodb-kubernetes-operator
 
-  # Version of mongodb-kubernetes-operator
+  # Version of contosodb-kubernetes-operator
   version: 1.8.3
 
   # Uncomment this line to watch all namespaces
